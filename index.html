@@ -16,28 +16,28 @@
       font-family: Georgia, "Times New Roman", serif;
       background: #ffffff;
       color: #111827;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .page {
       min-height: 100vh;
-      padding: 30px 7%;
+      padding: 24px 7%;
+      position: relative;
     }
 
-    /* TITLE */
     .brand {
       text-align: center;
       font-size: 1.4rem;
       letter-spacing: 0.08em;
       color: #111827;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    /* WE DO IT ALL */
     .subline {
       text-align: center;
       font-size: 2rem;
       color: #5aaee8;
-      margin-bottom: 60px;
     }
 
     .we-wrap {
@@ -72,15 +72,13 @@
       transform: rotate(-8deg);
     }
 
-    /* TOP ROW */
     .top-row {
+      margin-top: 70px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 80px;
     }
 
-    /* EXPLORE */
     .explore-menu {
       position: relative;
       color: #5aaee8;
@@ -114,7 +112,6 @@
       display: block;
     }
 
-    /* OPPORTUNITIES */
     .student-projects-wrap {
       text-align: center;
     }
@@ -140,18 +137,15 @@
       color: #111827;
     }
 
-    /* MAIN CENTER */
-    .main-content {
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      align-items: center;
-      gap: 50px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .center-quote {
+    .quote-box {
+      position: absolute;
+      left: 50%;
+      top: 56%;
+      transform: translate(-50%, -50%);
       text-align: center;
+      width: 70%;
+      max-width: 850px;
+      z-index: 1;
     }
 
     .quote {
@@ -160,17 +154,22 @@
       line-height: 1.05;
       font-weight: 500;
       color: #111827;
-      text-align: center;
     }
 
-    /* IMAGE */
+    .art {
+      position: absolute;
+      right: 7%;
+      top: 58%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
     .art img {
-      width: 240px;
+      width: 210px;
       border-radius: 20px;
       box-shadow: 0 18px 50px rgba(90, 174, 232, 0.25);
     }
 
-    /* MOBILE */
     @media (max-width: 900px) {
       .top-row {
         flex-direction: column;
@@ -178,21 +177,32 @@
         gap: 30px;
       }
 
-      .main-content {
-        grid-template-columns: 1fr;
+      .quote-box {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 80px;
+      }
+
+      .quote {
+        font-size: 3rem;
+      }
+
+      .art {
+        position: static;
+        transform: none;
         text-align: center;
+        margin-top: 40px;
       }
 
       .art img {
-        width: 240px;
+        width: 230px;
       }
     }
-
   </style>
 </head>
 
 <body>
-
   <main class="page">
 
     <div class="brand">Apparent Applications</div>
@@ -221,19 +231,16 @@
       </div>
     </section>
 
-    <section class="main-content">
-      <div class="center-quote">
-        <h1 class="quote">
-          To become a star,<br>you must burn
-        </h1>
-      </div>
-
-      <div class="art">
-        <img src="aim-stars.png" alt="Aim for the stars artwork">
-      </div>
+    <section class="quote-box">
+      <h1 class="quote">
+        To become a star,<br>you must burn
+      </h1>
     </section>
 
-  </main>
+    <div class="art">
+      <img src="aim-stars.png" alt="Aim for the stars artwork">
+    </div>
 
+  </main>
 </body>
 </html>
