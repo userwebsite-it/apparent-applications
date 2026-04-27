@@ -15,7 +15,7 @@
     body {
       font-family: Georgia, "Times New Roman", serif;
       background: #ffffff;
-      color: #172233;
+      color: #111827;
       min-height: 100vh;
     }
 
@@ -27,85 +27,17 @@
 
     .brand {
       text-align: center;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       letter-spacing: 0.08em;
-      color: #5aaee8;
-      margin-bottom: 42px;
-    }
-
-    .top-area {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 45px;
-    }
-
-    .explore {
-      color: #5aaee8;
-      font-size: 1.1rem;
-      letter-spacing: 0.12em;
-    }
-
-    .explore-box {
-      margin-top: 10px;
-      border: 2px solid #5aaee8;
-      width: 170px;
-    }
-
-    .explore-box div {
-      padding: 10px;
-      border-bottom: 2px solid #5aaee8;
-      font-size: 0.95rem;
-      color: #172233;
-    }
-
-    .explore-box div:last-child {
-      border-bottom: none;
-    }
-
-    .opportunities {
-      border: 2px solid #5aaee8;
-      color: #172233;
-      width: 190px;
-      text-align: center;
-      font-size: 1rem;
-    }
-
-    .opportunities div {
-      padding: 12px;
-      border-bottom: 2px solid #5aaee8;
-    }
-
-    .opportunities div:last-child {
-      border-bottom: none;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      align-items: center;
-      gap: 50px;
-      margin-top: 15px;
-    }
-
-    .quote-area {
-      text-align: center;
-    }
-
-    .quote {
-      font-size: clamp(2.2rem, 4.5vw, 4.4rem);
-      line-height: 1.05;
-      font-weight: 500;
-      color: #172233;
-      max-width: 750px;
-      margin: 0 auto 30px;
+      color: #111827;
+      margin-bottom: 14px;
     }
 
     .subline {
-      font-size: clamp(1.4rem, 3vw, 2.6rem);
+      text-align: center;
+      font-size: 2.1rem;
       color: #5aaee8;
-      display: inline-block;
-      position: relative;
+      margin-bottom: 55px;
     }
 
     .we-wrap {
@@ -115,7 +47,7 @@
     }
 
     .we {
-      color: #172233;
+      color: #111827;
       position: relative;
     }
 
@@ -126,7 +58,7 @@
       right: -6px;
       top: 54%;
       height: 3px;
-      background: #172233;
+      background: #111827;
       transform: rotate(-8deg);
       border-radius: 999px;
     }
@@ -136,41 +68,130 @@
       left: 2px;
       top: 78%;
       font-size: 0.45em;
-      color: #172233;
+      color: #111827;
       font-family: "Brush Script MT", cursive;
       transform: rotate(-8deg);
     }
 
-    .art {
+    .top-row {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .explore-menu {
+      position: relative;
+      color: #5aaee8;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      width: 190px;
+    }
+
+    .dropdown {
+      display: none;
+      margin-top: 12px;
+      border: 2px solid #5aaee8;
+      background: white;
+      letter-spacing: 0;
+      color: #111827;
+      width: 190px;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .dropdown div {
+      padding: 12px;
+      border-bottom: 2px solid #5aaee8;
+      font-size: 0.95rem;
+    }
+
+    .dropdown div:last-child {
+      border-bottom: none;
+    }
+
+    .explore-menu:hover .dropdown {
+      display: block;
+    }
+
+    .student-projects-wrap {
+      position: relative;
+      margin-right: 20px;
+      margin-top: 8px;
+    }
+
+    .opportunity-label {
+      color: #5aaee8;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .opportunity-label::after {
+      content: "↓";
+      display: block;
+      color: #5aaee8;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .student-projects {
+      border: 2px solid #5aaee8;
+      color: #111827;
+      padding: 14px 24px;
+      font-size: 1.05rem;
+      background: white;
+    }
+
+    .center-quote {
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .quote {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1.05;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .art {
+      position: absolute;
+      right: 7%;
+      top: 58%;
+      transform: translateY(-50%);
+      width: 300px;
     }
 
     .art img {
       width: 100%;
-      max-width: 340px;
       border-radius: 22px;
       box-shadow: 0 18px 50px rgba(90, 174, 232, 0.25);
     }
 
-    @media (max-width: 850px) {
-      .top-area {
-        flex-direction: column;
-        align-items: center;
-        gap: 22px;
+    @media (max-width: 900px) {
+      .center-quote {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 90px;
       }
 
-      .hero {
-        grid-template-columns: 1fr;
+      .art {
+        position: static;
+        transform: none;
+        margin: 40px auto 0;
       }
 
-      .quote {
-        font-size: 3rem;
-      }
-
-      .art img {
-        max-width: 310px;
+      .top-row {
+        gap: 30px;
       }
     }
   </style>
@@ -180,39 +201,37 @@
   <main class="page">
     <div class="brand">Apparent Applications</div>
 
-    <section class="top-area">
-      <div>
-        <div class="explore">EXPLORE</div>
-        <div class="explore-box">
+    <div class="subline">
+      <span class="we-wrap">
+        <span class="we">We</span>
+        <span class="you">you</span>
+      </span>
+      do it all
+    </div>
+
+    <section class="top-row">
+      <div class="explore-menu">
+        EXPLORE
+        <div class="dropdown">
           <div>Will it allow?</div>
           <div>Why</div>
           <div>How to join?</div>
         </div>
       </div>
 
-      <div class="opportunities">
-        <div>Opportunities</div>
-        <div>Student Projects</div>
+      <div class="student-projects-wrap">
+        <div class="opportunity-label">Opportunities</div>
+        <div class="student-projects">Student Projects</div>
       </div>
     </section>
 
-    <section class="hero">
-      <div class="quote-area">
-        <h1 class="quote">To become a star, you must burn</h1>
-
-        <div class="subline">
-          <span class="we-wrap">
-            <span class="we">We</span>
-            <span class="you">you</span>
-          </span>
-          do it all
-        </div>
-      </div>
-
-      <div class="art">
-        <img src="aim-stars.png" alt="Aim for the stars artwork" />
-      </div>
+    <section class="center-quote">
+      <h1 class="quote">To become a star, you must burn</h1>
     </section>
+
+    <div class="art">
+      <img src="aim-stars.png" alt="Aim for the stars artwork" />
+    </div>
   </main>
 </body>
 </html>
