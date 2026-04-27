@@ -12,19 +12,27 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --black: #111111;
+      --gray: #555555;
+      --light: #f6f8fb;
+      --blue: #2f80ed;
+      --blue-soft: #eaf3ff;
+      --line: #111111;
+    }
+
     body {
       font-family: Georgia, "Times New Roman", serif;
       background: #ffffff;
-      color: #111;
+      color: var(--black);
     }
 
     .page {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 30px 6%;
+      padding: 30px 6% 70px;
     }
 
-    /* HEADER */
     .header {
       display: flex;
       justify-content: space-between;
@@ -42,22 +50,18 @@
       display: flex;
       gap: 24px;
       font-size: 0.9rem;
-      color: #555;
+      color: var(--gray);
     }
 
-    .nav span {
-      cursor: pointer;
-    }
-
-    /* HERO */
     .hero {
       text-align: center;
-      margin-bottom: 90px;
+      margin-bottom: 80px;
     }
 
     .subline {
       font-size: 2.2rem;
       margin-bottom: 25px;
+      color: var(--blue);
     }
 
     .we-wrap {
@@ -68,6 +72,7 @@
 
     .we {
       position: relative;
+      color: var(--black);
     }
 
     .we::after {
@@ -77,7 +82,7 @@
       right: -4px;
       top: 50%;
       height: 2px;
-      background: #111;
+      background: var(--black);
       transform: rotate(-8deg);
     }
 
@@ -87,6 +92,7 @@
       left: 2px;
       font-size: 0.45em;
       font-family: cursive;
+      color: var(--black);
     }
 
     .quote {
@@ -96,49 +102,56 @@
       margin-bottom: 25px;
     }
 
-    .description {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #555;
-      line-height: 1.6;
-      font-size: 0.95rem;
+    .quote span {
+      color: var(--blue);
+      font-style: italic;
     }
 
-    /* BUTTONS */
+    .description {
+      font-family: Arial, sans-serif;
+      max-width: 640px;
+      margin: 0 auto 30px;
+      color: var(--gray);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+
     .buttons {
       display: flex;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 48px;
     }
 
     .button {
-      border: 1.5px solid #111;
+      border: 1.5px solid var(--black);
       padding: 12px 18px;
       text-decoration: none;
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
-      color: #111;
+      color: var(--black);
       background: white;
     }
 
     .button.primary {
-      background: #111;
+      background: var(--blue);
+      border-color: var(--blue);
       color: white;
     }
 
     .button:hover {
       transform: translate(-2px, -2px);
-      box-shadow: 4px 4px 0 #111;
+      box-shadow: 4px 4px 0 var(--black);
     }
 
-    /* IMAGE */
     .art {
-      margin: 50px auto;
-      max-width: 260px;
-      border: 2px solid #111;
+      margin: 0 auto;
+      max-width: 230px;
+      border: 2px solid var(--black);
       padding: 10px;
+      background: white;
+      box-shadow: 10px 10px 0 var(--blue-soft);
     }
 
     .art img {
@@ -146,47 +159,159 @@
       display: block;
     }
 
-    /* PROCESS */
-    .process {
+    .loop-section {
       margin-top: 90px;
-      border: 2px solid #111;
-      padding: 30px;
+      border: 2px solid var(--black);
+      padding: 34px;
+      background: var(--light);
     }
 
-    .process h2 {
-      margin-bottom: 25px;
-      font-size: 1.8rem;
-    }
-
-    .flow {
+    .loop-header {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .loop-header h2 {
+      font-size: 2rem;
+    }
+
+    .loop-header p {
       font-family: Arial, sans-serif;
+      color: var(--gray);
+      max-width: 440px;
+      line-height: 1.55;
+      font-size: 0.95rem;
     }
 
-    .step {
-      border: 2px solid #111;
-      padding: 12px 16px;
-      font-size: 0.9rem;
+    .loop-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
     }
 
-    .arrow {
-      font-size: 1.3rem;
+    .loop-card {
+      border: 2px solid var(--black);
+      background: white;
+      padding: 26px;
     }
 
-    /* GRID SECTION */
+    .loop-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+    }
+
+    .circle-loop {
+      width: 310px;
+      height: 310px;
+      margin: 0 auto;
+      position: relative;
+      border: 2px dashed var(--blue);
+      border-radius: 50%;
+    }
+
+    .loop-step {
+      position: absolute;
+      width: 130px;
+      min-height: 58px;
+      border: 2px solid var(--black);
+      background: white;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 5px 5px 0 var(--blue-soft);
+    }
+
+    .top-step {
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .right-step {
+      right: -34px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .bottom-step {
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .left-step {
+      left: -34px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .arrow-mark {
+      position: absolute;
+      color: var(--blue);
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .arrow-1 {
+      top: 38px;
+      right: 58px;
+      transform: rotate(35deg);
+    }
+
+    .arrow-2 {
+      bottom: 52px;
+      right: 58px;
+      transform: rotate(125deg);
+    }
+
+    .arrow-3 {
+      bottom: 52px;
+      left: 58px;
+      transform: rotate(215deg);
+    }
+
+    .arrow-4 {
+      top: 38px;
+      left: 58px;
+      transform: rotate(305deg);
+    }
+
+    .center-label {
+      position: absolute;
+      inset: 95px;
+      background: var(--blue-soft);
+      border: 2px solid var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      padding: 12px;
+      color: var(--black);
+    }
+
     .grid {
       margin-top: 80px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border: 2px solid #111;
+      border: 2px solid var(--black);
+      background: white;
     }
 
     .card {
-      padding: 22px;
-      border-right: 2px solid #111;
+      padding: 24px;
+      border-right: 2px solid var(--black);
     }
 
     .card:last-child {
@@ -194,42 +319,65 @@
     }
 
     .card h3 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 10px;
     }
 
     .card p {
       font-family: Arial, sans-serif;
-      color: #555;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      color: var(--gray);
+      font-size: 0.92rem;
+      line-height: 1.55;
     }
 
-    /* MOBILE */
     @media (max-width: 900px) {
+      .header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .loop-header {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .loop-grid {
+        grid-template-columns: 1fr;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
 
       .card {
         border-right: none;
-        border-bottom: 2px solid #111;
+        border-bottom: 2px solid var(--black);
       }
 
       .card:last-child {
         border-bottom: none;
       }
-
-      .flow {
-        justify-content: center;
-      }
     }
 
+    @media (max-width: 480px) {
+      .circle-loop {
+        width: 260px;
+        height: 260px;
+      }
+
+      .loop-step {
+        width: 112px;
+        font-size: 0.72rem;
+      }
+
+      .center-label {
+        inset: 82px;
+      }
+    }
   </style>
 </head>
 
 <body>
-
   <main class="page">
 
     <header class="header">
@@ -242,7 +390,6 @@
     </header>
 
     <section class="hero">
-
       <div class="subline">
         <span class="we-wrap">
           <span class="we">We</span>
@@ -252,12 +399,11 @@
       </div>
 
       <h1 class="quote">
-        To become a star,<br>you must burn
+        To become a <span>star</span>,<br>you must burn
       </h1>
 
       <p class="description">
-        A platform where students create projects, build teams, and contribute to real work. 
-        Start small, collaborate, and turn your effort into something you can actually show.
+        A platform where high school students create projects, recruit collaborators, join open roles, and turn real contributions into proof they can use on applications.
       </p>
 
       <div class="buttons">
@@ -268,43 +414,82 @@
       <div class="art">
         <img src="aim-stars.png" alt="Artwork">
       </div>
-
     </section>
 
-    <section class="process">
-      <h2>How it works</h2>
+    <section class="loop-section">
+      <div class="loop-header">
+        <h2>Two ways to build proof.</h2>
+        <p>
+          Students can either lead their own project or join someone else’s. Both paths are designed to turn small contributions into something real.
+        </p>
+      </div>
 
-      <div class="flow">
-        <div class="step">Create a project</div>
-        <div class="arrow">→</div>
-        <div class="step">Recruit students</div>
-        <div class="arrow">→</div>
-        <div class="step">Build real work</div>
-        <div class="arrow">→</div>
-        <div class="step">Verify contributions</div>
-        <div class="arrow">→</div>
-        <div class="step">Use as proof on applications</div>
+      <div class="loop-grid">
+
+        <div class="loop-card">
+          <h3>Create a project</h3>
+
+          <div class="circle-loop">
+            <div class="loop-step top-step">Create a project</div>
+            <div class="arrow-mark arrow-1">→</div>
+
+            <div class="loop-step right-step">Recruit students</div>
+            <div class="arrow-mark arrow-2">→</div>
+
+            <div class="loop-step bottom-step">Build real work</div>
+            <div class="arrow-mark arrow-3">→</div>
+
+            <div class="loop-step left-step">Use as proof on applications</div>
+            <div class="arrow-mark arrow-4">→</div>
+
+            <div class="center-label">
+              Lead a team and document the outcome.
+            </div>
+          </div>
+        </div>
+
+        <div class="loop-card">
+          <h3>Join a project</h3>
+
+          <div class="circle-loop">
+            <div class="loop-step top-step">Find an open project</div>
+            <div class="arrow-mark arrow-1">→</div>
+
+            <div class="loop-step right-step">Claim a role or task</div>
+            <div class="arrow-mark arrow-2">→</div>
+
+            <div class="loop-step bottom-step">Contribute real work</div>
+            <div class="arrow-mark arrow-3">→</div>
+
+            <div class="loop-step left-step">Use as proof on applications</div>
+            <div class="arrow-mark arrow-4">→</div>
+
+            <div class="center-label">
+              Start small and build verified contribution.
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="grid">
       <div class="card">
         <h3>Low barrier entry</h3>
-        <p>Join projects through small contributions like feedback, research, or ideas.</p>
+        <p>Students can join through beginner-friendly roles like idea collaborator, feedback helper, researcher, or outreach support.</p>
       </div>
 
       <div class="card">
-        <h3>Structured collaboration</h3>
-        <p>Projects offer claimable tasks with limited spots so work actually gets done.</p>
+        <h3>Structured contribution</h3>
+        <p>Projects use specific claimable tasks, limited spots, and founder verification so involvement is clear.</p>
       </div>
 
       <div class="card">
-        <h3>Real outcomes</h3>
-        <p>Students build proof of contribution that can be shown clearly on applications.</p>
+        <h3>Application-ready proof</h3>
+        <p>The goal is not empty titles. The goal is documented work, leadership, teamwork, and outcomes.</p>
       </div>
     </section>
 
   </main>
-
 </body>
 </html>
