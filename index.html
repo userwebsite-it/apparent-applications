@@ -17,27 +17,36 @@
       background: #ffffff;
       color: #111827;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
     .page {
       min-height: 100vh;
-      padding: 24px 7%;
+      padding: 30px 7%;
       position: relative;
     }
 
+    /* TITLE */
     .brand {
       text-align: center;
-      font-size: 1.4rem;
+      font-size: 1.8rem; /* bigger */
       letter-spacing: 0.08em;
       color: #111827;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
+    /* ROW UNDER TITLE */
+    .middle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    /* WE DO IT ALL */
     .subline {
-      text-align: center;
-      font-size: 2rem;
+      font-size: 2.6rem; /* bigger */
       color: #5aaee8;
+      text-align: center;
     }
 
     .we-wrap {
@@ -72,17 +81,11 @@
       transform: rotate(-8deg);
     }
 
-    .top-row {
-      margin-top: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
+    /* EXPLORE */
     .explore-menu {
       position: relative;
       color: #5aaee8;
-      font-size: 1.1rem;
+      font-size: 1.4rem; /* bigger */
       letter-spacing: 0.12em;
       cursor: pointer;
     }
@@ -92,15 +95,15 @@
       margin-top: 12px;
       border: 2px solid #5aaee8;
       background: white;
-      width: 190px;
+      width: 200px;
       position: absolute;
       z-index: 10;
     }
 
     .dropdown div {
-      padding: 12px;
+      padding: 14px;
       border-bottom: 2px solid #5aaee8;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: #111827;
     }
 
@@ -112,80 +115,76 @@
       display: block;
     }
 
+    /* OPPORTUNITIES */
     .student-projects-wrap {
       text-align: center;
     }
 
     .opportunity-label {
       color: #5aaee8;
-      font-size: 1rem;
+      font-size: 1.3rem; /* bigger */
       margin-bottom: 8px;
     }
 
     .opportunity-label::after {
       content: "↓";
       display: block;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #5aaee8;
     }
 
     .student-projects {
       border: 2px solid #5aaee8;
-      padding: 14px 24px;
-      font-size: 1.05rem;
+      padding: 16px 28px;
+      font-size: 1.2rem; /* bigger */
       background: white;
       color: #111827;
     }
 
+    /* QUOTE */
     .quote-box {
       position: absolute;
       left: 50%;
-      top: 56%;
+      top: 60%;
       transform: translate(-50%, -50%);
       text-align: center;
       width: 70%;
       max-width: 850px;
-      z-index: 1;
     }
 
     .quote {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.2rem, 5vw, 5.5rem);
-      line-height: 1.05;
+      font-size: clamp(2.4rem, 4vw, 4rem); /* smaller */
+      line-height: 1.1;
       font-weight: 500;
       color: #111827;
     }
 
+    /* IMAGE */
     .art {
       position: absolute;
       right: 7%;
-      top: 58%;
+      top: 60%;
       transform: translateY(-50%);
-      z-index: 2;
     }
 
     .art img {
-      width: 210px;
+      width: 190px; /* slightly smaller */
       border-radius: 20px;
       box-shadow: 0 18px 50px rgba(90, 174, 232, 0.25);
     }
 
+    /* MOBILE */
     @media (max-width: 900px) {
-      .top-row {
+      .middle-row {
         flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        gap: 25px;
       }
 
       .quote-box {
         position: static;
         transform: none;
-        width: 100%;
         margin-top: 80px;
-      }
-
-      .quote {
-        font-size: 3rem;
+        width: 100%;
       }
 
       .art {
@@ -194,28 +193,19 @@
         text-align: center;
         margin-top: 40px;
       }
-
-      .art img {
-        width: 230px;
-      }
     }
+
   </style>
 </head>
 
 <body>
+
   <main class="page">
 
     <div class="brand">Apparent Applications</div>
 
-    <div class="subline">
-      <span class="we-wrap">
-        <span class="we">We</span>
-        <span class="you">you</span>
-      </span>
-      do it all
-    </div>
+    <section class="middle-row">
 
-    <section class="top-row">
       <div class="explore-menu">
         EXPLORE
         <div class="dropdown">
@@ -225,10 +215,19 @@
         </div>
       </div>
 
+      <div class="subline">
+        <span class="we-wrap">
+          <span class="we">We</span>
+          <span class="you">you</span>
+        </span>
+        do it all
+      </div>
+
       <div class="student-projects-wrap">
         <div class="opportunity-label">Opportunities</div>
         <div class="student-projects">Student Projects</div>
       </div>
+
     </section>
 
     <section class="quote-box">
@@ -242,5 +241,6 @@
     </div>
 
   </main>
+
 </body>
 </html>
