@@ -12,45 +12,52 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --blue: #4aa8e8;
-      --blue-soft: #eef8ff;
-      --black: #101827;
-      --gray: #667085;
-      --line: #d7eaf8;
-    }
-
     body {
       font-family: Georgia, "Times New Roman", serif;
-      background:
-        linear-gradient(to right, rgba(74,168,232,0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(74,168,232,0.08) 1px, transparent 1px),
-        #ffffff;
-      background-size: 72px 72px;
-      color: var(--black);
+      background: #ffffff;
+      color: #111;
     }
 
     .page {
-      min-height: 100vh;
-      padding: 28px 6%;
-      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 6%;
     }
 
-    .top-title {
-      text-align: center;
-      margin-bottom: 42px;
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+      font-family: Arial, sans-serif;
     }
 
     .brand {
-      font-size: 1.7rem;
+      font-size: 1.2rem;
       letter-spacing: 0.08em;
-      color: var(--black);
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .nav span {
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      margin-bottom: 90px;
     }
 
     .subline {
-      margin-top: 10px;
-      font-size: 2.3rem;
-      color: var(--blue);
+      font-size: 2.2rem;
+      margin-bottom: 25px;
     }
 
     .we-wrap {
@@ -60,108 +67,46 @@
     }
 
     .we {
-      color: var(--black);
       position: relative;
     }
 
     .we::after {
       content: "";
       position: absolute;
-      left: -5px;
-      right: -5px;
-      top: 54%;
-      height: 3px;
-      background: var(--black);
+      left: -4px;
+      right: -4px;
+      top: 50%;
+      height: 2px;
+      background: #111;
       transform: rotate(-8deg);
     }
 
     .you {
       position: absolute;
+      top: 75%;
       left: 2px;
-      top: 78%;
       font-size: 0.45em;
-      color: var(--black);
-      font-family: "Brush Script MT", cursive;
-      transform: rotate(-8deg);
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 210px 1fr 280px;
-      gap: 44px;
-      align-items: start;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .side-label {
-      color: var(--blue);
-      letter-spacing: 0.16em;
-      font-size: 1.35rem;
-      margin-bottom: 14px;
-    }
-
-    .box {
-      border: 2px solid var(--blue);
-      background: rgba(255,255,255,0.9);
-    }
-
-    .box-row {
-      padding: 13px 14px;
-      border-bottom: 2px solid var(--blue);
-      font-size: 1rem;
-    }
-
-    .box-row:last-child {
-      border-bottom: none;
-    }
-
-    .left-panel {
-      padding-top: 22px;
-    }
-
-    .center {
-      text-align: center;
-      padding-top: 78px;
-    }
-
-    .kicker {
-      display: inline-block;
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      color: var(--blue);
-      border: 1.5px solid var(--blue);
-      padding: 9px 12px;
-      margin-bottom: 28px;
-      background: white;
+      font-family: cursive;
     }
 
     .quote {
-      font-size: clamp(3rem, 5.2vw, 5.8rem);
-      line-height: 1.02;
-      font-weight: 500;
-      letter-spacing: -0.045em;
-      color: var(--black);
-      margin-bottom: 30px;
-    }
-
-    .quote em {
-      color: var(--blue);
-      font-style: italic;
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 25px;
     }
 
     .description {
       font-family: Arial, sans-serif;
-      max-width: 590px;
+      max-width: 600px;
       margin: 0 auto 30px;
-      color: var(--gray);
-      line-height: 1.75;
-      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
 
-    .button-row {
+    /* BUTTONS */
+    .buttons {
       display: flex;
       justify-content: center;
       gap: 12px;
@@ -169,176 +114,134 @@
     }
 
     .button {
-      font-family: Arial, sans-serif;
+      border: 1.5px solid #111;
+      padding: 12px 18px;
       text-decoration: none;
-      border: 2px solid var(--blue);
-      color: var(--black);
-      padding: 13px 22px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #111;
       background: white;
-      font-size: 0.95rem;
-      transition: 0.18s ease;
     }
 
     .button.primary {
-      background: var(--blue);
+      background: #111;
       color: white;
     }
 
     .button:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 6px 6px 0 var(--line);
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 #111;
     }
 
-    .right-panel {
-      padding-top: 12px;
-    }
-
-    .opportunity {
-      text-align: center;
-      color: var(--blue);
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
-
-    .arrow {
-      color: var(--blue);
-      font-size: 2rem;
-      text-align: center;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .project-box {
-      border: 2px solid var(--blue);
-      padding: 15px 18px;
-      text-align: center;
-      font-size: 1.15rem;
-      background: white;
-      margin-bottom: 24px;
-    }
-
-    .art-frame {
-      border: 2px solid var(--blue);
+    /* IMAGE */
+    .art {
+      margin: 50px auto;
+      max-width: 260px;
+      border: 2px solid #111;
       padding: 10px;
-      background: white;
-      box-shadow: 12px 12px 0 var(--line);
-      margin-bottom: 24px;
     }
 
-    .art-frame img {
+    .art img {
       width: 100%;
       display: block;
     }
 
-    .mini-box {
-      border: 2px solid var(--blue);
-      background: white;
-      padding: 16px;
+    /* PROCESS */
+    .process {
+      margin-top: 90px;
+      border: 2px solid #111;
+      padding: 30px;
+    }
+
+    .process h2 {
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
       font-family: Arial, sans-serif;
     }
 
-    .mini-box h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.15rem;
-      margin-bottom: 10px;
+    .step {
+      border: 2px solid #111;
+      padding: 12px 16px;
+      font-size: 0.9rem;
     }
 
-    .mini-box p {
-      color: var(--gray);
-      font-size: 0.92rem;
-      line-height: 1.55;
+    .arrow {
+      font-size: 1.3rem;
     }
 
-    .bottom-grid {
-      max-width: 1280px;
-      margin: 70px auto 0;
+    /* GRID SECTION */
+    .grid {
+      margin-top: 80px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border: 2px solid var(--blue);
-      background: white;
+      border: 2px solid #111;
     }
 
-    .bottom-card {
-      padding: 24px;
-      border-right: 2px solid var(--blue);
+    .card {
+      padding: 22px;
+      border-right: 2px solid #111;
     }
 
-    .bottom-card:last-child {
+    .card:last-child {
       border-right: none;
     }
 
-    .bottom-card h3 {
-      font-size: 1.35rem;
+    .card h3 {
+      font-size: 1.2rem;
       margin-bottom: 10px;
     }
 
-    .bottom-card p {
+    .card p {
       font-family: Arial, sans-serif;
-      color: var(--gray);
-      line-height: 1.6;
-      font-size: 0.95rem;
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
 
-    .dropdown {
-      display: none;
-    }
-
-    .left-panel:hover .dropdown {
-      display: block;
-    }
-
-    .explore-default {
-      display: block;
-    }
-
-    .left-panel:hover .explore-default {
-      display: none;
-    }
-
-    @media (max-width: 1000px) {
-      .layout {
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .grid {
         grid-template-columns: 1fr;
       }
 
-      .left-panel,
-      .right-panel,
-      .center {
-        padding-top: 0;
-      }
-
-      .center {
-        order: 1;
-      }
-
-      .left-panel {
-        order: 2;
-      }
-
-      .right-panel {
-        order: 3;
-      }
-
-      .bottom-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .bottom-card {
+      .card {
         border-right: none;
-        border-bottom: 2px solid var(--blue);
+        border-bottom: 2px solid #111;
       }
 
-      .bottom-card:last-child {
+      .card:last-child {
         border-bottom: none;
       }
+
+      .flow {
+        justify-content: center;
+      }
     }
+
   </style>
 </head>
 
 <body>
+
   <main class="page">
 
-    <header class="top-title">
+    <header class="header">
       <div class="brand">Apparent Applications</div>
+      <nav class="nav">
+        <span>Explore</span>
+        <span>Projects</span>
+        <span>How it works</span>
+      </nav>
+    </header>
+
+    <section class="hero">
 
       <div class="subline">
         <span class="we-wrap">
@@ -347,78 +250,61 @@
         </span>
         do it all
       </div>
-    </header>
 
-    <section class="layout">
+      <h1 class="quote">
+        To become a star,<br>you must burn
+      </h1>
 
-      <aside class="left-panel">
-        <div class="side-label">EXPLORE</div>
+      <p class="description">
+        A platform where students create projects, build teams, and contribute to real work. 
+        Start small, collaborate, and turn your effort into something you can actually show.
+      </p>
 
-        <div class="box explore-default">
-          <div class="box-row">Hover to open</div>
-        </div>
+      <div class="buttons">
+        <a class="button primary" href="#">Explore Projects</a>
+        <a class="button" href="#">Start a Project</a>
+      </div>
 
-        <div class="box dropdown">
-          <div class="box-row">Will it allow?</div>
-          <div class="box-row">Why?</div>
-          <div class="box-row">How to join?</div>
-        </div>
-      </aside>
-
-      <section class="center">
-        <div class="kicker">Student-built opportunity system</div>
-
-        <h1 class="quote">
-          To become a <em>star</em>,<br>
-          you must burn
-        </h1>
-
-        <p class="description">
-          A low-pressure platform where high school students can share project ideas, join open roles, claim real tasks, and build proof of contribution without needing to already be an expert.
-        </p>
-
-        <div class="button-row">
-          <a class="button primary" href="#">Explore Projects</a>
-          <a class="button" href="#">Start a Project</a>
-        </div>
-      </section>
-
-      <aside class="right-panel">
-        <div class="opportunity">Opportunities</div>
-        <div class="arrow">↓</div>
-        <div class="project-box">Student Projects</div>
-
-        <div class="art-frame">
-          <img src="aim-stars.png" alt="Aim for the stars artwork">
-        </div>
-
-        <div class="mini-box">
-          <h3>Easy to join. Real to prove.</h3>
-          <p>
-            Students can enter through small roles like idea collaborator, feedback helper, researcher, designer, or outreach support.
-          </p>
-        </div>
-      </aside>
+      <div class="art">
+        <img src="aim-stars.png" alt="Artwork">
+      </div>
 
     </section>
 
-    <section class="bottom-grid">
-      <div class="bottom-card">
-        <h3>Start with one contribution</h3>
-        <p>Students join by offering something small: an idea, a skill, feedback, research, outreach, or time.</p>
+    <section class="process">
+      <h2>How it works</h2>
+
+      <div class="flow">
+        <div class="step">Create a project</div>
+        <div class="arrow">→</div>
+        <div class="step">Recruit students</div>
+        <div class="arrow">→</div>
+        <div class="step">Build real work</div>
+        <div class="arrow">→</div>
+        <div class="step">Verify contributions</div>
+        <div class="arrow">→</div>
+        <div class="step">Use as proof on applications</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Low barrier entry</h3>
+        <p>Join projects through small contributions like feedback, research, or ideas.</p>
       </div>
 
-      <div class="bottom-card">
-        <h3>Claim work, not titles</h3>
-        <p>Each project can post claimable tasks with limited spots, so members contribute clearly instead of just joining vaguely.</p>
+      <div class="card">
+        <h3>Structured collaboration</h3>
+        <p>Projects offer claimable tasks with limited spots so work actually gets done.</p>
       </div>
 
-      <div class="bottom-card">
-        <h3>Share the opportunity</h3>
-        <p>Founders build teams and document impact while contributors gain access to real projects they can grow from.</p>
+      <div class="card">
+        <h3>Real outcomes</h3>
+        <p>Students build proof of contribution that can be shown clearly on applications.</p>
       </div>
     </section>
 
   </main>
+
 </body>
 </html>
