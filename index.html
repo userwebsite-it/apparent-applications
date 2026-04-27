@@ -14,51 +14,98 @@
 
     body {
       font-family: Georgia, "Times New Roman", serif;
-      background: linear-gradient(135deg, #f7fbff 0%, #d9ecff 55%, #ffffff 100%);
-      color: #1f2d3d;
+      background: #ffffff;
+      color: #172233;
       min-height: 100vh;
     }
 
     .page {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 32px 7%;
+      padding: 34px 7%;
+      position: relative;
     }
 
     .brand {
-      font-size: 1.1rem;
+      text-align: center;
+      font-size: 1.25rem;
       letter-spacing: 0.08em;
-      color: #4f9fd8;
-      font-weight: 500;
+      color: #5aaee8;
+      margin-bottom: 42px;
+    }
+
+    .top-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 45px;
+    }
+
+    .explore {
+      color: #5aaee8;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+    }
+
+    .explore-box {
+      margin-top: 10px;
+      border: 2px solid #5aaee8;
+      width: 170px;
+    }
+
+    .explore-box div {
+      padding: 10px;
+      border-bottom: 2px solid #5aaee8;
+      font-size: 0.95rem;
+      color: #172233;
+    }
+
+    .explore-box div:last-child {
+      border-bottom: none;
+    }
+
+    .opportunities {
+      border: 2px solid #5aaee8;
+      color: #172233;
+      width: 190px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .opportunities div {
+      padding: 12px;
+      border-bottom: 2px solid #5aaee8;
+    }
+
+    .opportunities div:last-child {
+      border-bottom: none;
     }
 
     .hero {
-      flex: 1;
       display: grid;
-      grid-template-columns: 1fr 0.9fr;
+      grid-template-columns: 1fr 360px;
       align-items: center;
-      gap: 60px;
+      gap: 50px;
+      margin-top: 15px;
     }
 
-    .text-area {
-      max-width: 650px;
+    .quote-area {
+      text-align: center;
     }
 
     .quote {
-      font-size: clamp(3rem, 7vw, 6.8rem);
-      line-height: 0.95;
+      font-size: clamp(2.2rem, 4.5vw, 4.4rem);
+      line-height: 1.05;
       font-weight: 500;
-      color: #24384f;
-      margin-bottom: 36px;
+      color: #172233;
+      max-width: 750px;
+      margin: 0 auto 30px;
     }
 
     .subline {
-      font-size: clamp(1.8rem, 4vw, 3.4rem);
-      color: #4f9fd8;
-      position: relative;
+      font-size: clamp(1.4rem, 3vw, 2.6rem);
+      color: #5aaee8;
       display: inline-block;
-      line-height: 1.1;
+      position: relative;
     }
 
     .we-wrap {
@@ -68,62 +115,62 @@
     }
 
     .we {
+      color: #172233;
       position: relative;
-      color: #8aa0b5;
     }
 
     .we::after {
       content: "";
       position: absolute;
-      left: -4px;
-      right: -4px;
-      top: 52%;
+      left: -6px;
+      right: -6px;
+      top: 54%;
       height: 3px;
-      background: #24384f;
+      background: #172233;
       transform: rotate(-8deg);
       border-radius: 999px;
     }
 
     .you {
       position: absolute;
-      left: 4px;
+      left: 2px;
       top: 78%;
       font-size: 0.45em;
-      color: #24384f;
+      color: #172233;
       font-family: "Brush Script MT", cursive;
-      transform: rotate(-5deg);
+      transform: rotate(-8deg);
     }
 
-    .art-card {
+    .art {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .art-card img {
-      width: min(430px, 100%);
-      border-radius: 28px;
-      box-shadow: 0 25px 70px rgba(79, 159, 216, 0.25);
+    .art img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 22px;
+      box-shadow: 0 18px 50px rgba(90, 174, 232, 0.25);
     }
 
     @media (max-width: 850px) {
+      .top-area {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+      }
+
       .hero {
         grid-template-columns: 1fr;
-        text-align: center;
-        gap: 35px;
-        padding-top: 50px;
       }
 
-      .text-area {
-        margin: 0 auto;
+      .quote {
+        font-size: 3rem;
       }
 
-      .art-card img {
-        width: min(340px, 90%);
-      }
-
-      .brand {
-        text-align: center;
+      .art img {
+        max-width: 310px;
       }
     }
   </style>
@@ -131,10 +178,26 @@
 
 <body>
   <main class="page">
-    <header class="brand">Apparent Applications</header>
+    <div class="brand">Apparent Applications</div>
+
+    <section class="top-area">
+      <div>
+        <div class="explore">EXPLORE</div>
+        <div class="explore-box">
+          <div>Will it allow?</div>
+          <div>Why</div>
+          <div>How to join?</div>
+        </div>
+      </div>
+
+      <div class="opportunities">
+        <div>Opportunities</div>
+        <div>Student Projects</div>
+      </div>
+    </section>
 
     <section class="hero">
-      <div class="text-area">
+      <div class="quote-area">
         <h1 class="quote">To become a star, you must burn</h1>
 
         <div class="subline">
@@ -146,7 +209,7 @@
         </div>
       </div>
 
-      <div class="art-card">
+      <div class="art">
         <img src="aim-stars.png" alt="Aim for the stars artwork" />
       </div>
     </section>
